@@ -8,7 +8,7 @@
 
 ##### Jawad Alberri [GitHub](https://github.com/jawadbri) | [LinkedIn](https://www.linkedin.com/in/jawadalberri/)
 
-##### mohhamad [GitHub](test) | [LinkedIn](test)
+##### Mohammed Saeed [GitHub](https://github.com/m00hammed) | [LinkedIn](www.linkedin.com/in/mohammed-saeed776)
 
 ---
 
@@ -43,7 +43,7 @@
 
 [**_wireframe_**](test) --- -- --- -- ---[**_trello_**](https://trello.com/invite/b/QHehu7mB/ATTI1c02d94fcdf5c1f4acb87d8eb2dd1e10791F7DA0/food-crafters) --- -- --- -- --- [**_ERD_**](https://drive.google.com/file/d/1Wjl5sS7x-iTwuP1lkzwSzUpzkRCm0stC/view)
 
-[**_the back-end_**](https://github.com/Talal146/Food-Crafter--back-end)
+[**_the back-end_**](https://github.com/Talal146/Food-Crafter--Back-end)
 
 ---
 
