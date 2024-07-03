@@ -22,10 +22,6 @@
 
 ![tecno](https://miro.medium.com/v2/resize:fit:560/1*b9xOf5RushSbTofFqjbnyw.png)
 
-- MongoDB
-- Express
-- React
-- Node.js
 
 ### **_Getting Started_**
 
