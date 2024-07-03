@@ -4,21 +4,23 @@
 
 ### Group members:
 
-##### tala [GitHub](https://github.com/Talal146) | [LinkedIn] ( )
+##### Tala Alshwaier [GitHub](https://github.com/Talal146) | [LinkedIn](www.linkedin.com/in/talal-alshwaier)
 
 ##### Jawad Alberri [GitHub](https://github.com/jawadbri) | [LinkedIn](https://www.linkedin.com/in/jawadalberri/)
 
-##### mohhamad [GitHub] ( ) | [LinkedIn] ()
+##### mohhamad [GitHub](test) | [LinkedIn](test)
 
 ---
 
 ### **_Description_**
 
-#### "Food Crafter" is your ultimate companion for culinary creativity, designed to inspire and simplify the art of recipe creation. Whether you're a seasoned chef or a novice cook, this app offers a user-friendly platform to craft, customize, and share your unique recipes with ease.
+- ##### "Food Crafter" is your ultimate companion for culinary creativity, designed to inspire and simplify the art of recipe creation. Whether you're a seasoned chef or a novice cook, this app offers a user-friendly platform to craft, customize, and share your unique recipes with ease.
 
 ---
 
 ### **_Technologies Used_**
+
+![tecno](https://miro.medium.com/v2/resize:fit:560/1*b9xOf5RushSbTofFqjbnyw.png)
 
 - MongoDB
 - Express
@@ -27,32 +29,28 @@
 
 ### **_Getting Started_**
 
-##### the user can create recipes with whatever ingredients they want
+1. ##### the user can create recipes with whatever ingredients they want
 
-##### they can leave reviews on the recipes
+2. ##### they can leave reviews on the recipes
 
-##### the recipes will have a descripton, picture, ingredients, and the creator's name
+3. ##### the recipes will have a descripton, picture, ingredients, and the creator's name
 
-##### you can chooce what type of cuisine your recipe's from
-
----
-
-[**_wireframe_**] ( )
+4. ##### you can chooce what type of cuisine your recipe's from
 
 ---
 
-[**_ERD_**](https://drive.google.com/file/d/1Wjl5sS7x-iTwuP1lkzwSzUpzkRCm0stC/view)
-
 ---
 
-[**_trello_**] ( )
-
----
+[**_wireframe_**](test) --- -- --- -- ---[**_trello_**](https://trello.com/invite/b/QHehu7mB/ATTI1c02d94fcdf5c1f4acb87d8eb2dd1e10791F7DA0/food-crafters) --- -- --- -- --- [**_ERD_**](https://drive.google.com/file/d/1Wjl5sS7x-iTwuP1lkzwSzUpzkRCm0stC/view)
 
 [**_the back-end_**](https://github.com/Talal146/Food-Crafter--back-end)
 
 ---
 
-### **_Credits_**
+#### **_Credits_**
 
-###
+##### placeHolder 1
+
+##### placeHolder 2
+
+##### placeHolder 3
