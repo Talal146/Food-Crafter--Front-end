@@ -1,5 +1,8 @@
 import './App.css'
+import { Route, Routes } from 'react-router-dom'
 import Nav from '../src/components/Nav'
+import Auth from '../src/pages/auth'
+
 
 const App = () => {
 
@@ -12,6 +15,11 @@ const App = () => {
       <header>
         <Nav/>
       </header>
+      <main>
+        <Routes>
+          <Route path="/auth" element={<Auth />} />
+        </Routes>
+      </main>
     </div>
   )
 }

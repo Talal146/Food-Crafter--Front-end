@@ -1,12 +1,12 @@
 import '../App.css'
-
+import { Link } from "react-router-dom"
 
 const Nav = () => {
 
 
   return (
     <div className="nav">
-      hhh
+      <Link to="/auth">auth</Link>
     </div>
   )
 }
