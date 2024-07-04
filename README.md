@@ -37,7 +37,7 @@
 
 ---
 
-[**_wireframe_**](https://files.fm/u/6ctfwzz7f2) || [**_trello_**](https://trello.com/b/QHehu7mB/food-crafters) || [**_CHD_**]([https://trello.com/b/QHehu7mB/food-crafters](https://drive.google.com/file/d/1cOQICWxWxjNVsLYXrufvmCpKrRWwj-7L/view?usp=sharing)) || [**_ERD_**](https://drive.google.com/file/d/1Wjl5sS7x-iTwuP1lkzwSzUpzkRCm0stC/view)
+[**_wireframe_**](https://files.fm/u/6ctfwzz7f2) || [**_trello_**](https://trello.com/b/QHehu7mB/food-crafters) || [**_CHD_**](https://drive.google.com/file/d/1cOQICWxWxjNVsLYXrufvmCpKrRWwj-7L/view?usp=sharing) || [**_ERD_**](https://drive.google.com/file/d/1Wjl5sS7x-iTwuP1lkzwSzUpzkRCm0stC/view)
 
 [**_the back-end_**](https://github.com/Talal146/Food-Crafter--Back-end)
 
