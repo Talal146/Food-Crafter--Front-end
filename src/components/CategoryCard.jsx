@@ -1,12 +1,15 @@
 import '../App.css'
+import { Link } from "react-router-dom"
 
 const CategoryCard = () => {
 
 
   return (
-    <div className="category-card">
-      category card
-    </div>
+    <Link to={`/recipesList`}>
+      <div className="category-card">
+        category card
+      </div>
+    </Link>
   )
 }
 
