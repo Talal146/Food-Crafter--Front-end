@@ -1,7 +1,7 @@
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Nav from '../src/components/Nav'
-import Auth from '../src/pages/auth'
+import Auth from './pages/Auth'
 import Home from './pages/Home'
 import Create from './pages/Create'
 
