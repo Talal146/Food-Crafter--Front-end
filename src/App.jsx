@@ -2,6 +2,8 @@ import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Nav from '../src/components/Nav'
 import Auth from '../src/pages/auth'
+import Home from './pages/Home'
+import Create from './pages/Create'
 
 
 const App = () => {
@@ -17,7 +19,9 @@ const App = () => {
       </header>
       <main>
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/auth" element={<Auth />} />
+          <Route path="/create" element={<Create />} />
         </Routes>
       </main>
     </div>
