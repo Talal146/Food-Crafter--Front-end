@@ -1,4 +1,5 @@
 import '../App.css'
+import Categories from '../components/Categories'
 
 
 const Home = () => {
@@ -6,7 +7,8 @@ const Home = () => {
 
   return (
     <div className="home">
-      Hi I'm Home page
+      I'm Home page
+      <Categories/>
     </div>
   )
 }
