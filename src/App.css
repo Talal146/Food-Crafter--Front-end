@@ -76,7 +76,7 @@ main{
 }
 
 .category-card{
+  height: 120px;
   border: 2px solid black;
-  margin: 5px;
   border-radius: 5px;
 }
