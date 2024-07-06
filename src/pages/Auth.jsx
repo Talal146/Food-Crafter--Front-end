@@ -8,8 +8,12 @@ const Auth = () => {
   return (
     <div className="auth">
       Hi I'm auth
-      <Link to="/auth/logIn">LogIn</Link>
-      <Link to="/auth/signUp">SignUp</Link>
+      <form className='sign-form'>
+        <h4>do you have account?</h4>
+        <Link to="/auth/logIn"><button>LogIn</button></Link>
+        <h4>you don't have account?</h4>
+        <Link to="/auth/signUp"><button>SignUp</button></Link>
+      </form>
     </div>
   )
 }
