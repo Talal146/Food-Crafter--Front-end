@@ -26,7 +26,7 @@ const App = () => {
           <Route path="/recipesList" element={<RecipesList />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/auth/logIn" element={<LogIn />} />
-          <Route path="/auth/signUp" element={<SignUp />} />
+          <Route path="/auth/register" element={<SignUp />} />
         </Routes>
       </main>
     </div>
