@@ -15,6 +15,10 @@ a{
   margin: 5px;
 }
 
+h3,h5{
+  margin: 7px;
+}
+
 
 /*=======app page=======*/
 .app{
@@ -101,21 +105,21 @@ label{
 }
 
 
-/*=======Auth=======*/
+/*=======Forms=======*/
 .auth{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.log-in, .sign-up{
+.log-in, .sign-up, .create{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.sign-form{
+.sign-form, .create-form{
   background-color: rgb(255, 132, 0); 
   height: 400px;
   width: 450px;
@@ -130,11 +134,40 @@ label{
 }
 
 
-
 .input-container{
   width: 400px;
   margin: 5px;
   display: flex;
   justify-content:end;
-  
+}
+
+
+/*=======Recipes List=======*/
+
+.recipes-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recipe-card{
+  background-color: rgb(255, 132, 0);
+  height: 80px;
+  width: 450px;
+  border-top: 4px solid rgb(61, 61, 61);
+  border-bottom: 4px solid rgb(61, 61, 61);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*=======recipe details=======*/
+.recipes-details{
+  background-color: aqua;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
 }
