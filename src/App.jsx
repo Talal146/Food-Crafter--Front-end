@@ -8,6 +8,7 @@ import Auth from './pages/Auth'
 import LogIn from './components/LogIn'
 import SignUp from './components/SignUp'
 import RecipesDetails from './pages/RecipeDetails'
+import MyRecipes from './pages/MyRecipes'
 
 const App = () => {
 
@@ -29,6 +30,8 @@ const App = () => {
           <Route path="/auth/logIn" element={<LogIn />} />
           <Route path="/auth/register" element={<SignUp />} />
           <Route path="/recipeDetails" element={<RecipesDetails />} />
+          <Route path="/myRecipes" element={<MyRecipes />} />
+          
           
         </Routes>
       </main>

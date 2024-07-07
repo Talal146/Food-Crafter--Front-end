@@ -1,11 +1,11 @@
 import '../App.css'
 import RecipeCard from '../components/RecipeCard'
 
-const RecipesList = () => {
+const MyRecipes = () => {
 
 
   return (
-    <div className="recipes-list">
+    <div className="my-recipes">
       Recipes List
       <RecipeCard />
       <RecipeCard />
@@ -14,4 +14,4 @@ const RecipesList = () => {
   )
 }
 
-export default RecipesList
+export default MyRecipes
