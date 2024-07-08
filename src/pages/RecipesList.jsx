@@ -1,8 +1,10 @@
 import '../App.css'
 import RecipeCard from '../components/RecipeCard'
-import { useEffect, useState } from "react"
-import axios from "axios"
-import { useParams } from "react-router-dom"
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+import { useParams } from 'react-router-dom'
+
+// filter all recpies by cata id
 
 const RecipesList = () => {
   const [recipes, setRecipes] = useState([])
@@ -17,23 +19,17 @@ const RecipesList = () => {
 
         setRecipes(res.data.recipe)
       } catch (err) {
-        console.log("Error fetching recipes:", err)
+        console.log('Error fetching recipes:', err)
       }
     }
     getRecipes(id)
   }, [id])
 
-
   return (
     <div className="recipes-list">
       Recipes List
-
       {recipes.map((recipe) => (
-        <RecipeCard
-          key={recipe._id}
-          id={recipe._id}
-          name={recipe.name}
-        />
+        <RecipeCard key={recipe._id} id={recipe._id} name={recipe.name} />
       ))}
       <RecipeCard />
       <RecipeCard />
