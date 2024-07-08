@@ -19,7 +19,6 @@ const Nav = ({ user, handleLogOut }) => {
   const pubOp = (
     <nav className="nav">
       <Link to="/">Home</Link>
-      <Link to="/create">Create</Link>
       <Link to="/auth">auth</Link>
     </nav>
   )
