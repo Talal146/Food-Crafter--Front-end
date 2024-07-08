@@ -6,7 +6,7 @@ const CategoryCard = ({name, image, id}) => {
 
   return (
 
-    <Link to={`/recipesList/${name}`}>
+    <Link to={`/${name}`}>
       <div className="category-card" id={id} key={id}>
         category card
         <img src={image}/>
