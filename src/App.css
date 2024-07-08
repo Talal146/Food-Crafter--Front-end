@@ -1,7 +1,5 @@
-
-
 /*=======full app=======*/
-body{
+body {
   margin: 0;
   padding: 0;
 
@@ -9,41 +7,39 @@ body{
   max-height: 100%;
 }
 
-a{
+a {
   color: black;
   text-decoration: none;
   margin: 5px;
 }
 
-h3,h5{
+h3,
+h5 {
   margin: 7px;
 }
 
-
 /*=======app page=======*/
-.app{
+.app {
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-
 }
-header{
+header {
   width: 100%;
 }
-main{
+main {
   height: 100%;
   width: 100%;
 }
 
-input{
+input {
   width: 70%;
   height: 20px;
   border-radius: 5px;
   background-color: rgba(189, 79, 0, 0.305);
 }
-button{
+button {
   background-color: rgba(189, 79, 0, 0.305);
   width: 80px;
   height: 30px;
@@ -52,32 +48,26 @@ button{
   margin: 10px;
 }
 
-label{
+label {
   width: 30%;
 }
 
-
 /*=======Nav=======*/
-.nav{
-  background-color: rgb(255, 132, 0); 
-  width:100%;
-  height:45px;
+.nav {
+  background-color: rgb(255, 132, 0);
+  width: 100%;
+  height: 45px;
 
   margin-bottom: 5px;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
   border-bottom: 2px solid black;
 }
 
-
-
-
-
 /*=======Home page=======*/
-.home{
-
+.home {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -85,8 +75,8 @@ label{
 }
 
 /*=======categories=======*/
-.categories{
-  background-color: rgb(255, 132, 0); 
+.categories {
+  background-color: rgb(255, 132, 0);
   width: 350px;
   height: 150px;
 
@@ -98,29 +88,31 @@ label{
   border-radius: 5px;
 }
 
-.category-card{
+.category-card {
   height: 120px;
   border: 2px solid black;
   border-radius: 5px;
 }
 
-
 /*=======Forms=======*/
-.auth{
+.auth {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.log-in, .sign-up, .create{
+.log-in,
+.sign-up,
+.create {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.sign-form, .create-form{
-  background-color: rgb(255, 132, 0); 
+.sign-form,
+.create-form {
+  background-color: rgb(255, 132, 0);
   height: 400px;
   width: 450px;
 
@@ -130,27 +122,24 @@ label{
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
-
-.input-container{
+.input-container {
   width: 400px;
   margin: 5px;
   display: flex;
-  justify-content:end;
+  justify-content: end;
 }
-
 
 /*=======Recipes List=======*/
 
-.recipes-list{
+.recipes-list {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.recipe-card{
+.recipe-card {
   background-color: rgb(255, 132, 0);
   height: 80px;
   width: 450px;
@@ -163,11 +152,14 @@ label{
 }
 
 /*=======recipe details=======*/
-.recipes-details{
+.recipes-details {
   background-color: aqua;
   height: 100%;
   width: 100%;
 
   display: flex;
   flex-direction: row;
+}
+img {
+  max-height: 80%;
 }
