@@ -22,12 +22,12 @@ const Create = () => {
     if (storedUserId) setUserId(storedUserId)
   }, [])
   const initialState = {
-    recipeName: '',
+    name: '',
     categoryId: '',
-    ingredients: '',
+    ingredients: [],
     steps: '',
     image: '',
-    userId: ''
+    userId: userId
   }
 
   const [formValues, setFormValues] = useState(initialState)
