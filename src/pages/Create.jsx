@@ -21,7 +21,6 @@ const Create = () => {
     const storedUserId = localStorage.getItem('userId')
     if (storedUserId) setUserId(storedUserId)
   }, [])
-  // use axios to get all catagories then map through them in here or use them as a prop in the parent to map them here
   const initialState = {
     recipeName: '',
     categoryId: '',
