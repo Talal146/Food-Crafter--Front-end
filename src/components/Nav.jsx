@@ -8,6 +8,7 @@ const Nav = ({ user, handleLogOut }) => {
       <nav className="nav">
         <Link to="/create">Create</Link>
         <Link to="/">Home</Link>
+        <Link to="/myRecipes">MyRecipes</Link>
         <h4 className="greeting">Welcome {user.email}!</h4>
         <Link onClick={handleLogOut} to="/">
           Sign Out
@@ -18,6 +19,7 @@ const Nav = ({ user, handleLogOut }) => {
   const pubOp = (
     <nav className="nav">
       <Link to="/">Home</Link>
+      <Link to="/create">Create</Link>
       <Link to="/auth">auth</Link>
     </nav>
   )

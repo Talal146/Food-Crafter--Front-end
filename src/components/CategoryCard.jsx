@@ -1,15 +1,19 @@
 import '../App.css'
 import { Link } from "react-router-dom"
 
-const CategoryCard = () => {
+const CategoryCard = ({name, image, id}) => {
 
 
   return (
-    <Link to={`/recipesList`}>
-      <div className="category-card">
+
+    <Link to={`/recipesList/${name}`}>
+      <div className="category-card" id={id} key={id}>
         category card
+        <img src={image}/>
+        <h2 className='category-title'>{name}</h2>
+        
       </div>
-    </Link>
+    </Link>  
   )
 }
 

@@ -9,6 +9,8 @@ import RecipesList from './pages/RecipesList'
 import Auth from './pages/Auth'
 import LogIn from './components/SignIn'
 import SignUp from './components/Register'
+import RecipesDetails from './pages/RecipeDetails'
+import MyRecipes from './pages/MyRecipes'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -42,6 +44,10 @@ const App = () => {
           <Route path="/auth" element={<Auth />} />
           <Route path="/auth/logIn" element={<LogIn setUser={setUser} />} />
           <Route path="/auth/register" element={<SignUp />} />
+          <Route path="/recipeDetails" element={<RecipesDetails />} />
+          <Route path="/myRecipes" element={<MyRecipes />} />
+          <Route path="/recipeDetails" element={<RecipesDetails />} />
+          <Route path="/myRecipes" element={<MyRecipes />} />
         </Routes>
       </main>
     </div>
