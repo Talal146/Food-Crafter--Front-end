@@ -31,10 +31,6 @@ const Categories = () => {
             image={Category.image}
           />
       ))}
-
-      <CategoryCard/>
-      <CategoryCard/>
-      <CategoryCard/>
     </div>
   )
 }
