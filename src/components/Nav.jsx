@@ -6,13 +6,16 @@ const Nav = ({ user, handleLogOut }) => {
   if (user) {
     userOptions = (
       <nav className="nav">
-        <Link to="/create">Create</Link>
-        <Link to="/">Home</Link>
-        <Link to="/myRecipes">MyRecipes</Link>
-        <h4 className="greeting">Welcome {user.email}!</h4>
-        <Link onClick={handleLogOut} to="/">
-          Sign Out
-        </Link>
+        <div className='left-nav'><h4 className="greeting">Welcome {user.email}!</h4></div>
+        <div className='right-nav'>
+          <Link to="/">Home</Link>
+          <Link to="/create">Create</Link> 
+          <Link to="/myRecipes">MyRecipes</Link>
+        
+          <Link onClick={handleLogOut} to="/">
+            Sign Out
+          </Link>
+        </div>
       </nav>
     )
   }
