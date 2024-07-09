@@ -99,6 +99,17 @@ label {
   height: 120px;
   border: 2px solid black;
   border-radius: 5px;
+  margin: 0 5px;
+  overflow: hidden;
+}
+
+
+/*slider*/
+
+.slick-slider, .slick-initialized{
+ width: 400px;
+ height: 200px;
+
 }
 
 /*=======Forms=======*/
