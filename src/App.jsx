@@ -31,6 +31,7 @@ const App = () => {
       checkToken()
     }
   }, [])
+
   return (
     <div className="app">
       <header>
@@ -39,15 +40,13 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/recpies/create" element={<Create />} />
-          <Route path="/recipesList" element={<RecipesList />} />
+          <Route path="/recipes/create" element={<Create />} />
+          <Route path="/recipesList/:id" element={<RecipesList />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/auth/logIn" element={<LogIn setUser={setUser} />} />
           <Route path="/auth/register" element={<SignUp />} />
-          <Route path="/recipeDetails" element={<RecipesDetails />} />
-          <Route path="/myRecipes" element={<MyRecipes />} />
-          <Route path="/recipeDetails" element={<RecipesDetails />} />
-          <Route path="/myRecipes" element={<MyRecipes />} />
+          <Route path="/recipeDetails/:id" element={<RecipesDetails />} />
+          <Route path="/myRecipes" element={<MyRecipes user={user} />} />
         </Routes>
       </main>
     </div>

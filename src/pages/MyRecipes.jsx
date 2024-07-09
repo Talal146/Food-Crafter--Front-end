@@ -6,11 +6,10 @@ import Client from '../services/api'
 const MyRecipes = ({ user }) => {
   const [recipes, setRecipes] = useState([])
   const [updateRec, setUpdateRec] = useState(false)
-
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const response = await Client.get(`/recipes`)
+        const response = await Client.get('/recipes')
         setRecipes(response.data)
       } catch (error) {
         console.error('Error Data Fetching:', error)
@@ -18,17 +17,22 @@ const MyRecipes = ({ user }) => {
     }
     fetchRecipes()
   }, [updateRec])
+  const userRecipes = recipes.filter((recipe) => recipe.userId === user.id)
 
   if (!user) {
     return <h3 className="unavailable">Please log in to view your recipes.</h3>
   }
 
-  const userRecipes = recipes.filter((recipe) => recipe.userId === user.id)
-
   return (
     <div className="my-recipes">
       {userRecipes.length ? (
-        <RecipeCard reservations={userRecipes} setUpdateRes={setUpdateRec} />
+        userRecipes.map((recipe) => (
+          <RecipeCard
+            key={recipe.id}
+            recipe={recipe}
+            setUpdateRec={setUpdateRec}
+          />
+        ))
       ) : (
         <h3 className="unavailable">No recipes yet</h3>
       )}
