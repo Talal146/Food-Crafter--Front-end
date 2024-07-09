@@ -84,7 +84,7 @@ label {
 .categories {
   background-color: #305cde;
   width: 450px;
-  height: 150px;
+  height: 180px;
 
   display: flex;
   justify-content: center;
@@ -98,9 +98,18 @@ label {
 .category-card {
   height: 120px;
   border: 2px solid black;
+  background-color: #305cde;
   border-radius: 5px;
   margin: 0 5px;
   overflow: hidden;
+
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.category-card:hover {
+  background-color: rgba(0, 0, 0, 0.349);
 }
 
 
@@ -108,8 +117,22 @@ label {
 
 .slick-slider, .slick-initialized{
  width: 400px;
- height: 200px;
+ height: 150px;
 
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.slick-dots{
+    position: absolute;
+    bottom: -25px;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
 }
 
 /*=======Forms=======*/
@@ -180,4 +203,8 @@ label {
 }
 img {
   max-height: 81%;
+}
+
+h4{
+  margin: 0;
 }
