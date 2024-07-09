@@ -4,11 +4,11 @@ import React, { useEffect, useState } from 'react'
 import Client from '../services/api'
 
 const MyRecipes = ({ user }) => {
-  const [recipe, setRecipes] = useState([])
+  const [recipes, setRecipes] = useState([])
   const [updateRec, setUpdateRec] = useState(false)
 
   useEffect(() => {
-    const fetchrecipes = async () => {
+    const fetchRecipes = async () => {
       try {
         const response = await Client.get(`/recipes`)
         setRecipes(response.data)
@@ -16,10 +16,15 @@ const MyRecipes = ({ user }) => {
         console.error('Error Data Fetching:', error)
       }
     }
-    fetchrecipes()
+    fetchRecipes()
   }, [updateRec])
 
-  const userRecipes = recipe.filter((recipe) => recipe.userId === user.id)
+  if (!user) {
+    return <h3 className="unavailable">Please log in to view your recipes.</h3>
+  }
+
+  const userRecipes = recipes.filter((recipe) => recipe.userId === user.id)
+
   return (
     <div className="my-recipes">
       {userRecipes.length ? (
