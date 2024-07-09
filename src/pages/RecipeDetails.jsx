@@ -1,31 +1,70 @@
-import '../App.css'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import { useParams } from 'react-router-dom'
+import { BASE_URL } from '../services/api'
 
-const RecipesDetails = () => {
-  // Fetch and display details of the recipe using the URL param (recipe ID)
+const RecipeDetails = ({ currentUser }) => {
+  const { id } = useParams()
+  const [recipe, setRecipe] = useState(null)
+
+  useEffect(() => {
+    const fetchRecipe = async () => {
+      try {
+        const response = await axios.get(`${BASE_URL}/recipes`)
+        const filteredRecipe = response.data.find((recipe) => recipe._id === id)
+        setRecipe(filteredRecipe)
+      } catch (error) {
+        console.error('Error fetching recipes:', error)
+      }
+    }
+
+    fetchRecipe()
+  }, [id])
+
+  if (!recipe) {
+    return <div>Loading...</div>
+  }
+
+  const canModify = currentUser && recipe.userId === currentUser.id
+
   return (
     <div className="recipes-details">
       <h2>Recipe Details</h2>
       <div className="left-section">
         <div className="img-container">
-          <img src="" alt="Recipe" /> {/* Display recipe image */}
+          <img src={recipe.image} alt="Recipe" />
         </div>
       </div>
       <div className="right-section">
         <div className="input-container">
           <label>Recipe Name</label>
-          <div>{/* Display recipe name */}</div>
+          <div>{recipe.name}</div>
         </div>
         <div className="input-container">
           <label>Ingredients</label>
-          <div>{/* Display recipe ingredients */}</div>
+          <ul>
+            {recipe.ingredients.map((ingredient, index) => (
+              <li
+                key={index}
+              >{`${ingredient.itemName}: ${ingredient.amount}`}</li>
+            ))}
+          </ul>
         </div>
         <div className="input-container">
           <label>Steps</label>
-          <div>{/* Display recipe steps */}</div>
+          <div>{recipe.steps}</div>
         </div>
+        {canModify && (
+          <div className="edit-delete-buttons">
+            <button onClick={() => handleDelete(recipe._id)}>Delete</button>
+            <Link to={`/editRecipe/${recipe._id}`}>
+              <button>Edit</button>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   )
 }
 
-export default RecipesDetails
+export default RecipeDetails

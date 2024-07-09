@@ -1,18 +1,16 @@
-import '../App.css'
-import RecipeCard from '../components/RecipeCard'
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import Client from '../services/api'
 import { useParams } from 'react-router-dom'
-import { BASE_URL } from '../services/api'
+import RecipeCard from '../components/RecipeCard'
 
-const RecipesList = () => {
+const RecipesList = ({ user }) => {
   const [recipes, setRecipes] = useState([])
   const { id } = useParams()
 
   useEffect(() => {
-    const getRecipes = async () => {
+    const fetchRecipes = async () => {
       try {
-        const res = await axios.get(`${BASE_URL}/recipes`)
+        const res = await Client.get('/recipes')
         const filteredRecipes = res.data.filter(
           (recipe) => recipe.categoryId === id
         )
@@ -22,14 +20,23 @@ const RecipesList = () => {
       }
     }
 
-    getRecipes()
+    fetchRecipes()
   }, [id])
+
+  const handleDelete = (recipeId) => {
+    setRecipes(recipes.filter((recipe) => recipe._id !== recipeId))
+  }
 
   return (
     <div className="recipes-list">
       <h2>Recipes List</h2>
       {recipes.map((recipe) => (
-        <RecipeCard key={recipe._id} recipe={recipe} />
+        <RecipeCard
+          key={recipe._id}
+          recipe={recipe}
+          currentUser={user}
+          onDelete={handleDelete}
+        />
       ))}
     </div>
   )

@@ -25,3 +25,12 @@ export const CheckSession = async () => {
     throw error
   }
 }
+
+export const deleteRecipe = async (recipeId) => {
+  const token = localStorage.getItem('token')
+  return Client.delete(`/recipes/${recipeId}`, {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  })
+}

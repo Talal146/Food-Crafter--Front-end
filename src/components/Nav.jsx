@@ -22,6 +22,7 @@ const Nav = ({ user, handleLogOut }) => {
       <Link to="/auth">Auth</Link>
     </nav>
   )
+
   return <header>{user ? userOptions : pubOp}</header>
 }
 
