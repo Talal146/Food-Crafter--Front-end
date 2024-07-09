@@ -1,12 +1,12 @@
 import '../App.css'
 import { Link } from 'react-router-dom'
 
-const RecipeCard = () => {
-  // every recpie and how it'll show
+const RecipeCard = ({ recipe }) => {
   return (
-    <Link to={`/recipeDetails`}>
+    <Link to={`/recipeDetails/${recipe.id}`}>
       <div className="recipe-card">
-        <h3>title</h3> <h5>delete</h5>
+        <h3>{recipe.title}</h3>
+        <h5>Delete</h5>
       </div>
     </Link>
   )

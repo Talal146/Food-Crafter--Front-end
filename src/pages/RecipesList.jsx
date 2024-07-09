@@ -1,10 +1,9 @@
 import '../App.css'
 import RecipeCard from '../components/RecipeCard'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
-
-// filter all recpies by cata id
+import { BASE_URL } from '../services/api'
 
 const RecipesList = () => {
   const [recipes, setRecipes] = useState([])
@@ -13,27 +12,25 @@ const RecipesList = () => {
   useEffect(() => {
     const getRecipes = async () => {
       try {
-        const res = await axios.get(
-          `http://localhost:3001/categories/${id}/recipesList`
+        const res = await axios.get(`${BASE_URL}/recipes`)
+        const filteredRecipes = res.data.filter(
+          (recipe) => recipe.categoryId === id
         )
-
-        setRecipes(res.data.recipe)
+        setRecipes(filteredRecipes)
       } catch (err) {
         console.log('Error fetching recipes:', err)
       }
     }
-    getRecipes(id)
+
+    getRecipes()
   }, [id])
 
   return (
     <div className="recipes-list">
-      Recipes List
+      <h2>Recipes List</h2>
       {recipes.map((recipe) => (
-        <RecipeCard key={recipe._id} id={recipe._id} name={recipe.name} />
+        <RecipeCard key={recipe._id} recipe={recipe} />
       ))}
-      <RecipeCard />
-      <RecipeCard />
-      <RecipeCard />
     </div>
   )
 }
