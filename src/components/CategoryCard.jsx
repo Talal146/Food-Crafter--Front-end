@@ -10,7 +10,7 @@ const CategoryCard = ({name, image, id}) => {
    
     <Link to={`/${name}`}>
       <div className="category-card" id={id} key={id}>
-        <img src={image} width='150px'/>
+        <img src={image} height='150px'/>
         <h4 className='category-title'>{name}</h4>
       </div>
     </Link>  
