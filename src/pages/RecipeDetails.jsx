@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { BASE_URL } from '../services/api'
-
-const RecipeDetails = ({ currentUser }) => {
+import Review from '../components/Review'
+const RecipeDetails = ({ user }) => {
   const { id } = useParams()
   const [recipe, setRecipe] = useState(null)
 
@@ -25,7 +25,7 @@ const RecipeDetails = ({ currentUser }) => {
     return <div>Loading...</div>
   }
 
-  const canModify = currentUser && recipe.userId === currentUser.id
+  const canModify = user && recipe.userId === user.id
 
   return (
     <div className="recipes-details">
@@ -54,6 +54,7 @@ const RecipeDetails = ({ currentUser }) => {
           <label>Steps</label>
           <div>{recipe.steps}</div>
         </div>
+        <Review user={user} />
         {canModify && (
           <div className="edit-delete-buttons">
             <button onClick={() => handleDelete(recipe._id)}>Delete</button>

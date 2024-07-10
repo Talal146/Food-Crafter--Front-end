@@ -34,7 +34,7 @@ const RecipesList = ({ user }) => {
         <RecipeCard
           key={recipe._id}
           recipe={recipe}
-          currentUser={user}
+          user={user}
           onDelete={handleDelete}
         />
       ))}
