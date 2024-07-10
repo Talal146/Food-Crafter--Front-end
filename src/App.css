@@ -1,23 +1,23 @@
 /*=======full app=======*/
 body {
+  background-image: url('/Delicious.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   margin: 0;
   padding: 0;
-
   max-width: 100%;
   max-height: 100%;
 }
-
 a {
-  color: black;
+  color: rgb(160, 160, 160);
   text-decoration: none;
   margin: 5px;
 }
-
 h3,
 h5 {
   margin: 7px;
 }
-
 /*=======app page=======*/
 .app {
   height: 100vh;
@@ -32,116 +32,119 @@ main {
   height: 100%;
   width: 100%;
 }
-
 input {
   width: 70%;
   height: 20px;
   border-radius: 5px;
-  background-color: rgba(189, 79, 0, 0.305);
+  background-color: #00000062;
 }
 button {
-  background-color: rgba(189, 79, 0, 0.305);
+  background-color: #00000062;
   width: 80px;
   height: 30px;
   cursor: pointer;
   border-radius: 3px;
   margin: 10px;
 }
-
 label {
   width: 30%;
 }
-
 /*=======Nav=======*/
 .nav {
-  background-color: #305cde;
+  background-color: #00000062;
   width: 100%;
   height: 45px;
-
   margin-bottom: 5px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid black;
- 
+  color: white;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.578);
 }
-
-.left-nav, .right-nav{
+.left-nav,
+.right-nav {
   margin: 0 15px;
-
 }
-
 /*=======Home page=======*/
-.home {
+.home,
+.my-recipes {
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 /*=======categories=======*/
 .categories {
-  background-color: #305cde;
-  width: 450px;
-  height: 180px;
-
+  background-color: #00000062;
+  width: 550px;
+  height: 300px;
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 5px;
-
   border: 1px solid black;
   border-radius: 5px;
   overflow: hidden;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.578);
 }
-
 .category-card {
   height: 120px;
   border: 2px solid black;
-  background-color: #305cde;
+  background-color: #00000062;
   border-radius: 5px;
   margin: 0 5px;
   overflow: hidden;
-
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .category-card:hover {
   background-color: rgba(0, 0, 0, 0.349);
 }
-
-
 /*slider*/
-
-.slick-slider, .slick-initialized{
- width: 400px;
- height: 150px;
-
- display: flex;
- justify-content: center;
- align-items: center;
+.slick-slider,
+.slick-initialized {
+  width: 480px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.slick-dots{
-    position: absolute;
-    bottom: -25px;
-    display: block;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    text-align: center;
+.slick-dots {
+  position: absolute;
+  bottom: -25px;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
 }
-
+.slick-arrow {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
+}
 /*=======Forms=======*/
 .auth {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .log-in,
 .sign-up,
 .create {
@@ -150,61 +153,63 @@ label {
   align-items: center;
   justify-content: center;
 }
-
 .sign-form,
 .create-form {
-  background-color: rgb(255, 132, 0);
+  background-color: #00000062;
   height: 400px;
   width: 450px;
-
   border: 1px solid black;
   border-radius: 5px;
-
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.578);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .input-container {
   width: 400px;
   margin: 5px;
   display: flex;
   justify-content: end;
 }
-
 /*=======Recipes List=======*/
-
 .recipes-list {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .recipe-card {
-  background-color: rgb(255, 132, 0);
+  background-color: #00000062;
   height: 80px;
   width: 450px;
-  border-top: 4px solid rgb(61, 61, 61);
-  border-bottom: 4px solid rgb(61, 61, 61);
-
+  border: 2px solid #00000062;
+  border-top: 4px solid #00000062;
+  border-bottom: 4px solid #00000062;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.578);
 }
-
+.recipe-card:hover {
+  background-color: #0000009f;
+  border: 2px solid #00000062;
+  border-top: 4px solid #00000062;
+  border-bottom: 4px solid #00000062;
+  border-radius: 15px;
+}
 /*=======recipe details=======*/
 .recipes-details {
   background-color: aqua;
   height: 100%;
   width: 100%;
-
   display: flex;
   flex-direction: row;
 }
 img {
   max-height: 81%;
 }
-
-h4{
+h4 {
   margin: 0;
+}
+a {
+  color: aliceblue;
 }

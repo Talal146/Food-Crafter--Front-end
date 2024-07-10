@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { deleteRecipe } from '../services/Auth'
 
-const RecipeCard = ({ recipe, onDelete, currentUser }) => {
+const RecipeCard = ({ recipe, onDelete, user }) => {
   const handleDelete = async () => {
     try {
       await deleteRecipe(recipe._id)
@@ -14,11 +14,11 @@ const RecipeCard = ({ recipe, onDelete, currentUser }) => {
     }
   }
 
-  const canModify = currentUser && recipe.userId === currentUser.id
+  const canModify = user && recipe.userId === user.id
 
   return (
     <div className="recipe-card">
-      <Link to={`/recipes/${recipe._id}`}>
+      <Link to={`/recipes/${recipe._id}`} user={user}>
         <h3>{recipe.name}</h3>
       </Link>
       <div className="card-buttons">
