@@ -26,7 +26,6 @@ const RecipeDetails = ({ user }) => {
   }
 
   const canModify = user && recipe.userId === user.id
-
   return (
     <div className="recipes-details">
       <h2>Recipe Details</h2>
