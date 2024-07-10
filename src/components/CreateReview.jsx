@@ -25,8 +25,8 @@ const CreateReview = ({ user, recipeId, refreshReviews }) => {
           Authorization: `Bearer ${user.token}`
         }
       })
-      setReview({ comment: '', recipeId: recipeId, userId: user.id }) // Clear the form
-      refreshReviews() // Refresh the review list
+      setReview({ comment: '', recipeId: recipeId, userId: user.id }) 
+      refreshReviews() 
     } catch (error) {
       console.error('Error creating review:', error)
     }

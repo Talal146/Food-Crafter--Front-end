@@ -2,10 +2,12 @@ import '../App.css'
 import RecipeCard from '../components/RecipeCard'
 import React, { useEffect, useState } from 'react'
 import Client from '../services/api'
+import Confirm from './Confirm'
 
 const MyRecipes = ({ user }) => {
   const [recipes, setRecipes] = useState([])
   const [updateRec, setUpdateRec] = useState(false)
+  const [recipeToDelete, setRecipeToDelete] = useState(null)
 
   useEffect(() => {
     const fetchRecipes = async () => {
@@ -22,27 +24,21 @@ const MyRecipes = ({ user }) => {
   const userRecipes = recipes.filter((recipe) => recipe.userId === user.id)
 
   const handleDelete = async (recipeId) => {
-    const confirmDelete = window.confirm(
-      'Are you sure you want to delete this recipe?'
-    )
-
-    if (confirmDelete) {
-      try {
-        await Client.delete(`/recipes/${recipeId}`, {
-          headers: {
-            Authorization: `Bearer ${user.token}`
-          }
-        })
-        setRecipes(recipes.filter((recipe) => recipe._id !== recipeId))
-        setUpdateRec(!updateRec) // Toggle updateRec to trigger useEffect
-      } catch (error) {
-        console.error('Error deleting recipe:', error)
-      }
+    try {
+      await Client.delete(`/recipes/${recipeId}`, {
+        headers: {
+          Authorization: `Bearer ${user.token}`
+        }
+      })
+      setRecipes(recipes.filter((recipe) => recipe._id !== recipeId))
+      setUpdateRec(!updateRec)
+      setRecipeToDelete(null)
+    } catch (error) {
+      console.error('Error deleting recipe:', error)
     }
   }
 
   const handleUpdate = (recipeId) => {
-    // Implement update functionality as needed
     console.log(`Update recipe with id: ${recipeId}`)
   }
 
@@ -54,14 +50,20 @@ const MyRecipes = ({ user }) => {
     <div className="my-recipes">
       {userRecipes.length ? (
         userRecipes.map((recipe) => (
-          <RecipeCard
-            key={recipe._id}
-            recipe={recipe}
-            onDelete={handleDelete}
-            onUpdate={handleUpdate}
-            user={user}
-            setUpdateRec={setUpdateRec}
-          />
+          <div key={recipe._id}>
+            <RecipeCard
+              recipe={recipe}
+              onDelete={() => setRecipeToDelete(recipe)}
+              onUpdate={handleUpdate}
+              user={user}
+              setUpdateRec={setUpdateRec}
+            />
+            <Confirm
+              isOpen={recipeToDelete && recipeToDelete._id === recipe._id}
+              onCancel={() => setRecipeToDelete(null)}
+              onConfirm={() => handleDelete(recipe._id)} 
+            />
+          </div>
         ))
       ) : (
         <h3 className="unavailable">No recipes yet</h3>
