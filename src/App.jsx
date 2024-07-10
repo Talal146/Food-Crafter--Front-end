@@ -12,7 +12,7 @@ import SignUp from './components/Register'
 import RecipeDetails from './pages/RecipeDetails'
 import MyRecipes from './pages/MyRecipes'
 import EditRecipe from './components/EditRecipe'
-
+import EditReview from './components/EditReview' 
 const App = () => {
   const [user, setUser] = useState(null)
 
@@ -32,6 +32,7 @@ const App = () => {
       checkToken()
     }
   }, [])
+
   return (
     <div className="app">
       <header>
@@ -41,16 +42,14 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/recipes/create" element={<Create />} />
-          <Route
-            path="/recipesList/:id"
-            element={<RecipesList user={user} />}
-          />
+          <Route path="/recipesList/:id" element={<RecipesList user={user} />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/auth/logIn" element={<LogIn setUser={setUser} />} />
           <Route path="/auth/register" element={<SignUp />} />
-          <Route path="/recipes/:id" element={<RecipeDetails />} />
+          <Route path="/recipes/:id" element={<RecipeDetails user={user} />} />
           <Route path="/myRecipes" element={<MyRecipes user={user} />} />
-          <Route path="/editRecipe/:id" element={<EditRecipe />} />
+          <Route path="/editRecipe/:id" element={<EditRecipe user={user} />} />
+          <Route path="/editReview/:reviewId" element={<EditReview user={user} />} />
         </Routes>
       </main>
     </div>

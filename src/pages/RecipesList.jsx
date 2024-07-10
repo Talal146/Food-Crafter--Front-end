@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react'
 import Client from '../services/api'
 import { useParams } from 'react-router-dom'
 import RecipeCard from '../components/RecipeCard'
+import Confirm from './Confirm'
 
 const RecipesList = ({ user }) => {
   const [recipes, setRecipes] = useState([])
   const { id } = useParams()
+  const [recipeToDelete, setRecipeToDelete] = useState(null)
 
   useEffect(() => {
     const fetchRecipes = async () => {
@@ -23,20 +25,35 @@ const RecipesList = ({ user }) => {
     fetchRecipes()
   }, [id])
 
-  const handleDelete = (recipeId) => {
-    setRecipes(recipes.filter((recipe) => recipe._id !== recipeId))
+  const handleDelete = async (recipeId) => {
+    try {
+      await Client.delete(`/recipes/${recipeId}`, {
+        headers: {
+          Authorization: `Bearer ${user.token}`
+        }
+      })
+      setRecipes(recipes.filter((recipe) => recipe._id !== recipeId))
+      setRecipeToDelete(null) 
+    } catch (error) {
+      console.error('Error deleting recipe:', error)
+    }
   }
 
   return (
     <div className="recipes-list">
       <h2>Recipes List</h2>
       {recipes.map((recipe) => (
-        <RecipeCard
-          key={recipe._id}
-          recipe={recipe}
-          user={user}
-          onDelete={handleDelete}
-        />
+        <div key={recipe._id}>
+          <RecipeCard
+            recipe={recipe}
+            user={user}
+            onDelete={() => setRecipeToDelete(recipe)}/>
+          <Confirm
+            isOpen={recipeToDelete && recipeToDelete._id === recipe._id}
+            onCancel={() => setRecipeToDelete(null)} 
+            onConfirm={() => handleDelete(recipe._id)}
+          />
+        </div>
       ))}
     </div>
   )
