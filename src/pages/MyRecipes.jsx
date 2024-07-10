@@ -31,6 +31,7 @@ const MyRecipes = ({ user }) => {
             key={recipe.id}
             recipe={recipe}
             setUpdateRec={setUpdateRec}
+            currentUser={user}
           />
         ))
       ) : (
