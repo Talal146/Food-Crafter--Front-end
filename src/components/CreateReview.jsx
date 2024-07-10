@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
+import { useParams } from 'react-router-dom'
 import Client from '../services/api'
 
-const Review = ({ user, recipeId }) => {
-  console.log('Recipe ID:', recipeId) // This should log the correct recipeId
-
+const CreateReview = ({ user, recipeId, refreshReviews }) => {
   const [review, setReview] = useState({
     comment: '',
     recipeId: recipeId,
@@ -26,6 +25,8 @@ const Review = ({ user, recipeId }) => {
           Authorization: `Bearer ${user.token}`
         }
       })
+      setReview({ comment: '', recipeId: recipeId, userId: user.id }) // Clear the form
+      refreshReviews() // Refresh the review list
     } catch (error) {
       console.error('Error creating review:', error)
     }
@@ -46,4 +47,4 @@ const Review = ({ user, recipeId }) => {
   )
 }
 
-export default Review
+export default CreateReview

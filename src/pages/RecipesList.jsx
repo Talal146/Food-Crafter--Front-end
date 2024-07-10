@@ -23,8 +23,17 @@ const RecipesList = ({ user }) => {
     fetchRecipes()
   }, [id])
 
-  const handleDelete = (recipeId) => {
-    setRecipes(recipes.filter((recipe) => recipe._id !== recipeId))
+  const handleDelete = async (recipeId) => {
+    try {
+      await Client.delete(`/recipes/${recipeId}`, {
+        headers: {
+          Authorization: `Bearer ${user.token}`
+        }
+      })
+      setRecipes(recipes.filter((recipe) => recipe._id !== recipeId))
+    } catch (error) {
+      console.error('Error deleting recipe:', error)
+    }
   }
 
   return (
