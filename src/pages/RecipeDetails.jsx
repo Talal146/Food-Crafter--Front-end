@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { BASE_URL } from '../services/api'
-import Review from '../components/Review'
+import Review from '../components/CreateReview'
+
 const RecipeDetails = ({ user }) => {
   const { id } = useParams()
   const [recipe, setRecipe] = useState(null)
@@ -54,7 +55,7 @@ const RecipeDetails = ({ user }) => {
           <label>Steps</label>
           <div>{recipe.steps}</div>
         </div>
-        <Review user={user} />
+        <Review user={user} recipeId={id} />
         {canModify && (
           <div className="edit-delete-buttons">
             <button onClick={() => handleDelete(recipe._id)}>Delete</button>
