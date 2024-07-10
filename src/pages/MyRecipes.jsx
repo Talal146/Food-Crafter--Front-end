@@ -6,6 +6,7 @@ import Client from '../services/api'
 const MyRecipes = ({ user }) => {
   const [recipes, setRecipes] = useState([])
   const [updateRec, setUpdateRec] = useState(false)
+
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
@@ -17,7 +18,33 @@ const MyRecipes = ({ user }) => {
     }
     fetchRecipes()
   }, [updateRec])
+
   const userRecipes = recipes.filter((recipe) => recipe.userId === user.id)
+
+  const handleDelete = async (recipeId) => {
+    const confirmDelete = window.confirm(
+      'Are you sure you want to delete this recipe?'
+    )
+
+    if (confirmDelete) {
+      try {
+        await Client.delete(`/recipes/${recipeId}`, {
+          headers: {
+            Authorization: `Bearer ${user.token}`
+          }
+        })
+        setRecipes(recipes.filter((recipe) => recipe._id !== recipeId))
+        setUpdateRec(!updateRec) // Toggle updateRec to trigger useEffect
+      } catch (error) {
+        console.error('Error deleting recipe:', error)
+      }
+    }
+  }
+
+  const handleUpdate = (recipeId) => {
+    // Implement update functionality as needed
+    console.log(`Update recipe with id: ${recipeId}`)
+  }
 
   if (!user) {
     return <h3 className="unavailable">Please log in to view your recipes.</h3>
@@ -28,10 +55,12 @@ const MyRecipes = ({ user }) => {
       {userRecipes.length ? (
         userRecipes.map((recipe) => (
           <RecipeCard
-            key={recipe.id}
+            key={recipe._id}
             recipe={recipe}
+            onDelete={handleDelete}
+            onUpdate={handleUpdate}
+            user={user}
             setUpdateRec={setUpdateRec}
-            currentUser={user}
           />
         ))
       ) : (
