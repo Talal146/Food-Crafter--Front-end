@@ -1,6 +1,5 @@
 /*=======full app=======*/
 body {
-
   background-image: url('/Delicious.png');
   background-repeat: no-repeat;
   background-size: cover;
@@ -15,10 +14,23 @@ a {
   text-decoration: none;
   margin: 5px;
 }
-h3,
-h5 {
-  margin: 7px;
+
+h3 {
+  margin: 5px;
+  color:rgb(178, 178, 178);
 }
+
+h4,h5{
+  margin: 2px;
+  color:rgb(178, 178, 178);
+
+}
+
+ul{
+  color:rgb(178, 178, 178);
+}
+
+  
 /*=======app page=======*/
 .app {
   height: 100vh;
@@ -41,6 +53,7 @@ input {
 }
 button {
   background-color: #00000062;
+  color: rgb(160, 160, 160);
   width: 80px;
   height: 30px;
   cursor: pointer;
@@ -62,6 +75,22 @@ label {
   border-bottom: 2px solid black;
   color: white;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.578);
+  margin-bottom: 20px;
+}
+
+nav a {
+  color: rgb(160, 160, 160);
+  text-decoration: none;
+  margin: 5px;
+  height: 100%;
+  width: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav a:hover {
+  background-color: rgba(0, 0, 0, 0.773) ;
 }
 .left-nav,
 .right-nav {
@@ -78,7 +107,7 @@ label {
 /*=======categories=======*/
 .categories {
   background-color: #00000062;
-  width: 550px;
+  width: 600px;
   height: 300px;
   display: flex;
   justify-content: center;
@@ -89,6 +118,19 @@ label {
   overflow: hidden;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.578);
 }
+
+.category-card img {
+    height: 120px;
+    border: 2px solid black;
+    background-color: #00000062;
+    margin: 0 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
 .category-card {
   height: 120px;
   border: 2px solid black;
@@ -139,7 +181,12 @@ label {
   border: none;
   outline: none;
   background: transparent;
+  left: 475px;
 }
+
+
+
+
 /*=======Forms=======*/
 .auth {
   display: flex;
@@ -158,7 +205,7 @@ label {
 .create-form {
   background-color: #00000062;
   height: 400px;
-  width: 450px;
+  width: 600px;
   border: 1px solid black;
   border-radius: 5px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.578);
@@ -170,6 +217,7 @@ label {
   width: 400px;
   margin: 5px;
   display: flex;
+  flex-direction: row;
   justify-content: end;
 }
 /*=======Recipes List=======*/
@@ -185,10 +233,11 @@ label {
   border: 2px solid #00000062;
   border-top: 4px solid #00000062;
   border-bottom: 4px solid #00000062;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.578);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.578);
+
 }
 .recipe-card:hover {
   background-color: #0000009f;
@@ -198,19 +247,147 @@ label {
   border-radius: 15px;
 }
 /*=======recipe details=======*/
-.recipes-details {
-  background-color: aqua;
-  height: 100%;
+.recipes-details, .recipes-list, .my-recipes {
+  background-color: #00000062;
+  height: 97%;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.578);
+}
+.top-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-container{
+  background-color: #00000062;
+  height: 200px;
+  width: 200px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border: 2px solid black;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.578);
+  border-radius: 15px;
+  margin: auto;
+  overflow: hidden;
+}
+
+
+
+.input-container{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  
+
+}
+
+.steps-container, .ingredients-container{
+  background-color: rgba(0, 0, 0, 0.363);
+  width: 200px;
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+
+.med-section{
   width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
 }
-img {
-  max-height: 81%;
+
+.left-section{
+  height: 250px;
+  width: 58%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  text-align: center;
+  margin: 10px;
+
+
+  overflow: hidden;
 }
-h4 {
-  margin: 0;
+.ingredients-container, .steps-container{
+  width: 330px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  border: 2px solid #00000062;
+  border-top: 4px solid #00000062;
+  border-bottom: 4px solid #00000062;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.578);
+
+
+
+
+  
 }
-a {
-  color: aliceblue;
+
+.revew-section{
+  background-color: rgba(0, 0, 0, 0.363);
+  border-top: 1px solid black ;
+  width: 100%;
+  height: 300px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
 }
+
+.input-container{
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 230px;
+
+  
+
+}
+
+.input-container textarea{
+  background-color: #00000062;
+  height: 200px;
+  width: 220px;
+  color: rgb(160, 160, 160);
+  border: 2px solid #00000062;
+  border-top: 4px solid #00000062;
+  border-bottom: 4px solid #00000062;
+}
+
+.review-list{
+
+  width: 500px ;
+}
+
+.review{
+  margin: 7px;
+  border: 2px solid #00000062;
+  border-top: 4px solid #00000062;
+  border-bottom: 4px solid #00000062;
+}
+
+p{
+  margin: 2px;
+  color: rgb(160, 160, 160);
+}
+

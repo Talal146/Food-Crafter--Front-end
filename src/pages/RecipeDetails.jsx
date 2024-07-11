@@ -43,19 +43,18 @@ const RecipeDetails = ({ user }) => {
 
   return (
     <div className="recipes-details">
-      <h2>Recipe Details</h2>
-      <div className="left-section">
-        <div className="img-container">
-          <img src={recipe.image} alt="Recipe" />
-        </div>
+          <h1>{recipe.name}</h1>
+
+
+    <div className='med-section'>
+
+    <div className="img-container">
+          <img src={recipe.image} alt="Recipe" height='300px' />
       </div>
-      <div className="right-section">
-        <div className="input-container">
-          <label>Recipe Name</label>
-          <div>{recipe.name}</div>
-        </div>
-        <div className="input-container">
-          <label>Ingredients</label>
+
+      <div className='left-section'>
+        <div className="ingredients-container">
+          <h3>Ingredients</h3>
           <ul>
             {recipe.ingredients.map((ingredient, index) => (
               <li
@@ -64,17 +63,29 @@ const RecipeDetails = ({ user }) => {
             ))}
           </ul>
         </div>
-        <div className="input-container">
-          <label>Steps</label>
-          <div>{recipe.steps}</div>
+
+        <div className="steps-container">
+          <h3>Steps</h3>
+          <h5>{recipe.steps}</h5>
         </div>
+      </div>
+
+
+      
+    </div>
+
+    
+    <div className='revew-section'>
+
         <CreateReview
           user={user}
           recipeId={id}
           refreshReviews={refreshReviews}
-        />
+          />
         <ReviewList recipeId={id} user={user} />
-      </div>
+    </div>
+
+
     </div>
   )
 }

@@ -35,8 +35,9 @@ const CreateReview = ({ user, recipeId, refreshReviews }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="input-container">
-        <label>Comment</label>
+        <h3>Comment</h3>
         <textarea
+        placeholder='comment'
           name="comment"
           value={review.comment}
           onChange={handleChange}
