@@ -25,9 +25,8 @@ const SignIn = ({ setUser }) => {
   }
 
   return (
-    <div className="container wrapper">
-      <div className="signin-card">
-        <form onSubmit={handleSubmit}>
+    <div className="register">
+        <form onSubmit={handleSubmit} className="create-form">
           <div className="input-wrapper">
             <label htmlFor="email">Email</label>
             <input
@@ -53,7 +52,6 @@ const SignIn = ({ setUser }) => {
             Sign In
           </button>
         </form>
-      </div>
     </div>
   )
 }

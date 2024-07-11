@@ -35,10 +35,9 @@ const Register = () => {
   }
 
   return (
-    <>
-      <div className="container">
-        <div className="register-card centered">
-          <form onSubmit={handleSubmit}>
+    <div className="register">
+
+          <form onSubmit={handleSubmit} className="sign-form">
             <div className="input-wrapper">
               <label htmlFor="name">Name</label>
               <input
@@ -92,9 +91,9 @@ const Register = () => {
               Sign In
             </button>
           </form>
-        </div>
-      </div>
-    </>
+
+
+    </div>
   )
 }
 

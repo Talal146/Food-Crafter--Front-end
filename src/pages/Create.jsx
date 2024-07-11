@@ -74,8 +74,8 @@ const Create = () => {
     <div className="create">
       <h2>Create New Recipe</h2>
       <form className="create-form" onSubmit={handleSubmit}>
-        <div className="input-container">
-          <label htmlFor="recipeName">Recipe Name</label>
+        <div className="input-wrapper">
+          <label htmlFor="recipeName" className='input-label'>Recipe Name</label>
           <input
             onChange={handleChange}
             type="text"
@@ -86,8 +86,8 @@ const Create = () => {
           />
         </div>
 
-        <div className="input-container">
-          <label htmlFor="category" className="label-new">
+        <div className="input-wrapper">
+          <label htmlFor="category" className="input-label">
             Category
           </label>
           <select
@@ -107,8 +107,8 @@ const Create = () => {
           </select>
         </div>
 
-        <div className="input-container">
-          <label htmlFor="ingredients">Ingredients</label>
+        <div className="input-wrapper">
+          <label htmlFor="ingredients" className='input-label'>Ingredients</label>
           {formValues.ingredients.map((ingredient, index) => (
             <div key={index} className="ingredient-input">
               <input
@@ -130,12 +130,12 @@ const Create = () => {
             </div>
           ))}
           <button type="button" onClick={addIngredient}>
-            Add Ingredient
+            Add Ingr
           </button>
         </div>
 
-        <div className="input-container">
-          <label htmlFor="steps">Steps</label>
+        <div className="input-wrapper">
+          <label htmlFor="steps" className='input-label'>Steps</label>
           <input
             onChange={handleChange}
             type="text"
@@ -146,8 +146,8 @@ const Create = () => {
           />
         </div>
 
-        <div className="input-container">
-          <label htmlFor="image">Image URL</label>
+        <div className="input-wrapper">
+          <label htmlFor="image" className='input-label'>Image URL</label>
           <input
             onChange={handleChange}
             type="text"
