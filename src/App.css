@@ -15,13 +15,14 @@ a {
   margin: 5px;
 }
 
+
 h3 {
   margin: 5px;
   color:rgb(178, 178, 178);
 }
 
 h4,h5{
-  margin: 2px;
+  margin: 1px;
   color:rgb(178, 178, 178);
 
 }
@@ -59,7 +60,15 @@ button {
   cursor: pointer;
   border-radius: 3px;
   margin: 10px;
+  box-shadow: 3px 3px black;
 }
+button:hover {
+  background-color: #00000091;
+  border-radius: 7px;
+
+}
+
+
 label {
   width: 30%;
 }
@@ -194,7 +203,7 @@ nav a:hover {
   align-items: center;
 }
 .log-in,
-.sign-up,
+.register,
 .create {
   display: flex;
   flex-direction: column;
@@ -212,14 +221,42 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: rgb(160, 160, 160);
+  padding: 10px;
 }
-.input-container {
+
+.input-label{
+  width: flex;
+  width: 100px;
+
+}
+.input-container, .ingredient-input, .input-wrapper{
+  width: 500px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.input-container, .input-wrapper input{
+  width: 400px;
+  color: rgb(160, 160, 160);
+}
+
+.input-form{
   width: 400px;
   margin: 5px;
   display: flex;
-  flex-direction: row;
-  justify-content: end;
+  flex-direction: column;
+  align-items: center;
+  background-color: #00000062;
 }
+
+
+
+
+
+
+
 /*=======Recipes List=======*/
 .recipes-list {
   display: flex;
@@ -229,7 +266,7 @@ nav a:hover {
 .recipe-card {
   background-color: #00000062;
   height: 80px;
-  width: 450px;
+  width: 550px;
   border: 2px solid #00000062;
   border-top: 4px solid #00000062;
   border-bottom: 4px solid #00000062;
@@ -237,6 +274,7 @@ nav a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 5px;
 
 }
 .recipe-card:hover {
@@ -285,13 +323,7 @@ nav a:hover {
 
 
 
-.input-container{
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  
 
-}
 
 .steps-container, .ingredients-container{
   background-color: rgba(0, 0, 0, 0.363);
@@ -352,19 +384,16 @@ nav a:hover {
   
 }
 
-.input-container{
+.input-container2{
   height: 230px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 230px;
-
-  
-
 }
 
-.input-container textarea{
+.input-container2 textarea{
   background-color: #00000062;
   height: 200px;
   width: 220px;
@@ -375,7 +404,6 @@ nav a:hover {
 }
 
 .review-list{
-
   width: 500px ;
 }
 

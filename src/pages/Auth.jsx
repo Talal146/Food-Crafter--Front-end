@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 const Auth = () => {
   return (
     <div className="auth">
-      Hi I'm auth
       <form className="sign-form">
         <h4>do you have account?</h4>
         <Link to="/auth/logIn">

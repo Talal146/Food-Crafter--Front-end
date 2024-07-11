@@ -34,7 +34,7 @@ const CreateReview = ({ user, recipeId, refreshReviews }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="input-container">
+      <div className="input-container2">
         <h3>Comment</h3>
         <textarea
         placeholder='comment'
